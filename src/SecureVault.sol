@@ -24,7 +24,7 @@ contract SecureVault {
         balances[msg.sender] = 0;
 
         // Interactions
-        (bool success, ) = msg.sender.call{value: balance}("");
+        (bool success,) = msg.sender.call{value: balance}("");
         require(success, "Transfer failed");
     }
 

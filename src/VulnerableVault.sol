@@ -11,10 +11,10 @@ contract VulnerableVault {
     function withdraw() external {
         uint256 balance = balances[msg.sender];
         require(balance > 0, "No balance");
-        
-        (bool success, ) = msg.sender.call{value: balance}("");
+
+        (bool success,) = msg.sender.call{value: balance}("");
         require(success, "Transfer failed");
-        
+
         balances[msg.sender] = 0;
     }
 

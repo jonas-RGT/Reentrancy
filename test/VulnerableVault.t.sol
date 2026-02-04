@@ -35,7 +35,7 @@ contract VulnerableVaultTest is Test {
         assertEq(address(attacker).balance, 0);
         assertEq(address(this).balance, 1 ether);
 
-        // Attack 
+        // Attack
         attacker.attack{value: 1 ether}();
 
         //  Verify results
